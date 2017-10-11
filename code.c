@@ -9,7 +9,7 @@ void getParameters(int* arrNum, int* arrLen, int* k) {
 	fclose(fd);
 }
 
-int getValue(int arrNum, int arrInd) {
+unsigned int getValue(int arrNum, int arrInd) {
 	FILE *fd;
 	unsigned int value = 0, a, b, c, d;
 	unsigned char num[4];
@@ -35,11 +35,11 @@ int arrayLength(int arrNum, int** arrBondrs) {
 	return arrBondrs[1][arrNum]-arrBondrs[0][arrNum];
 }
 
-int binarySearch(int num1, int l, int arrSize, int value)
+unsigned int binarySearch(int num1, int l, int arrSize, int value)
 {
 	if (arrSize >= l)
 	{
-		int mid = l + (arrSize - l)/2;
+		unsigned int mid = l + (arrSize - l)/2;
 
 		if (getValue(num1, mid) == value)
 		{
@@ -71,8 +71,8 @@ int i;
 
 for(i = 1; i <= m; i++)
 {
-	int v = binarySearch (i, 0, 4, 176);
-	int b =	getValue(i, v);
+	unsigned int v = binarySearch(i, 0, n, 5000);
+	unsigned int b = getValue(i, v);
 	printf("%d.dat= %d\n", i, v);
 	printf("Value = %d\n", b);
 }
